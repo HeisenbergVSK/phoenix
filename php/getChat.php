@@ -3,7 +3,7 @@ include_once("config.php");
 session_start();
 $outgoingid = $_SESSION['id'];
 $incomingid = mysqli_real_escape_string($conn, $_POST['incomingid']);
-
+//also
 // get message query
 $getMsgQuery = "SELECT * FROM `messages` LEFT JOIN `users` ON messages.outgoing = users.id WHERE outgoing = '{$outgoingid}' AND incoming = '{$incomingid}' OR outgoing = '{$incomingid}' AND incoming = '{$outgoingid}'";
 $runGetMsgQuery = mysqli_query($conn, $getMsgQuery);
